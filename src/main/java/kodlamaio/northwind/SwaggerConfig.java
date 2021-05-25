@@ -15,7 +15,7 @@ public class SwaggerConfig {
     public Docket docket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot")))
+                .apis(RequestHandlerSelectors.basePackage("kodlamaio.northwind"))
                 .build();
     }
 }
