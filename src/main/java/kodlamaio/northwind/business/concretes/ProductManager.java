@@ -10,6 +10,7 @@ import kodlamaio.northwind.entities.concretes.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +35,12 @@ public class ProductManager implements ProductService {
     public DataResult<List<Product>> getAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return new SuccessDataResult<List<Product>>(this.productDao.findAll(pageable).getContent(),"Products listed successfully");
+    }
+
+    @Override
+    public DataResult<List<Product>> getAllSorted() {
+        Sort sort = Sort.by(Sort.Direction.ASC, "productName");
+        return new SuccessDataResult<List<Product>>(this.productDao.findAll(sort));
     }
 
     @Override

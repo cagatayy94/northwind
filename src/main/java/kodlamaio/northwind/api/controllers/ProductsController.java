@@ -65,5 +65,10 @@ public class ProductsController {
     public DataResult<List<Product>> getAll(@RequestParam int page, @RequestParam int size){
         return this.productService.getAll(page, size);
     }
+
+    @GetMapping("getAllSorted")
+    public DataResult<List<Product>> getAllSorted(){
+        return this.productService.getAllSorted();
+    }
 }
 

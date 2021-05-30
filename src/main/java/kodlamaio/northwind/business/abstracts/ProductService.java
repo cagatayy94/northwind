@@ -12,6 +12,8 @@ public interface ProductService {
 
     DataResult<List<Product>> getAll(int page, int size);
 
+    DataResult<List<Product>> getAllSorted();
+
     Result add(Product product);
 
     DataResult<Product> getByProductName(String productName);
