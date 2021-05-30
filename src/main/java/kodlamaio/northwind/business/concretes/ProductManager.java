@@ -40,27 +40,27 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public DataResult<Product> getByProductNameAndCategory(String productName, int categoryId) {
-        return new SuccessDataResult<Product>(this.productDao.getByProductNameAndCategory(productName, categoryId));
+    public DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId) {
+        return new SuccessDataResult<Product>(this.productDao.getByProductNameAndCategory_CategoryId(productName, categoryId));
     }
 
     @Override
-    public DataResult<List<Product>> getByProductNameOrCategory(String productName, int categoryId) {
-        return new SuccessDataResult<List<Product>>(this.productDao.getByProductNameOrCategory(productName, categoryId));
+    public DataResult<List<Product>> getByProductNameOrCategory_CategoryId(String productName, int categoryId) {
+        return new SuccessDataResult<List<Product>>(this.productDao.getByProductNameOrCategory_CategoryId(productName, categoryId));
     }
 
     @Override
-    public DataResult<List<Product>> getByCategoryIn(List<Integer> categories) {
-        return new SuccessDataResult<List<Product>>(this.productDao.getByCategoryIn(categories));
+    public DataResult<List<Product>> getByCategory_CategoryIdIn(List<Integer> categoryIds) {
+        return new SuccessDataResult<List<Product>>(this.productDao.getByCategory_CategoryIdIn(categoryIds));
     }
 
     @Override
     public DataResult<List<Product>> getByProductNameContains(String productName) {
-        return new SuccessDataResult<List<Product>>(this.productDao.getByProductNameContains(productName));
+        return new SuccessDataResult<>(this.productDao.getByProductNameContains(productName));
     }
 
     @Override
-    public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
-        return new SuccessDataResult<List<Product>>(this.productDao.getByNameAndCategory(productName, categoryId));
+    public DataResult<List<Product>> getByNameAndCategory_CategoryId(String productName, int categoryId) {
+        return new SuccessDataResult<>(this.productDao.getByNameAndCategory_CategoryId(productName, categoryId));
     }
 }

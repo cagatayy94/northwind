@@ -12,13 +12,13 @@ public interface ProductService {
 
     DataResult<Product> getByProductName(String productName);
 
-    DataResult<Product> getByProductNameAndCategory(String productName, int categoryId);
+    DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
-    DataResult<List<Product>> getByProductNameOrCategory(String productName, int categoryId);
+    DataResult<List<Product>> getByProductNameOrCategory_CategoryId(String productName, int categoryId);
 
-    DataResult<List<Product>> getByCategoryIn(List<Integer> categories);
+    DataResult<List<Product>> getByCategory_CategoryIdIn(List<Integer> categoryIds);
 
     DataResult<List<Product>> getByProductNameContains(String productName);
 
-    DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+    DataResult<List<Product>> getByNameAndCategory_CategoryId(String productName, int categoryId);
 }
