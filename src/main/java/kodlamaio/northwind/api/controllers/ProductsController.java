@@ -4,6 +4,8 @@ import kodlamaio.northwind.business.abstracts.ProductService;
 import kodlamaio.northwind.core.utilities.results.*;
 import kodlamaio.northwind.entities.concretes.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,6 +59,11 @@ public class ProductsController {
     @GetMapping("getByNameAndCategory_CategoryId")
     public DataResult<List<Product>> getByNameAndCategory_CategoryId(@RequestParam String productName, @RequestParam int categoryId){
         return this.productService.getByNameAndCategory_CategoryId(productName, categoryId);
+    }
+
+    @GetMapping("getAll/paginate")
+    public DataResult<List<Product>> getAll(@RequestParam int page, @RequestParam int size){
+        return this.productService.getAll(page, size);
     }
 }
 

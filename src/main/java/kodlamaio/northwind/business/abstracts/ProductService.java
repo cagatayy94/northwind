@@ -7,7 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProductService {
+
     DataResult<List<Product>> getAll();
+
+    DataResult<List<Product>> getAll(int page, int size);
+
     Result add(Product product);
 
     DataResult<Product> getByProductName(String productName);
