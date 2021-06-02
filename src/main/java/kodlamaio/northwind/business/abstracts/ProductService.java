@@ -2,6 +2,7 @@ package kodlamaio.northwind.business.abstracts;
 
 import kodlamaio.northwind.core.utilities.results.*;
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameContains(String productName);
 
     DataResult<List<Product>> getByNameAndCategory_CategoryId(String productName, int categoryId);
+
+    List<ProductWithCategoryDto> getProductWithCategoryDetails();
 }
