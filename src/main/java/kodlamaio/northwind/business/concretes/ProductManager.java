@@ -56,6 +56,11 @@ public class ProductManager implements ProductService {
     }
 
     @Override
+    public DataResult<Product> getById(int productId) {
+        return new SuccessDataResult<>(this.productDao.getById(productId));
+    }
+
+    @Override
     public DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId) {
         return new SuccessDataResult<>(this.productDao.getByProductNameAndCategory_CategoryId(productName, categoryId));
     }
